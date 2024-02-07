@@ -1,0 +1,40 @@
+.navbar{
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    display: flex;
+
+    background-color: #232342;
+}
+
+#navbar__right{
+    width: 65%;
+    gap: 2rem;
+}
+#navbar__left{
+    width: 30%;
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+}
+
+li{
+    padding: 25px;
+    list-style-type: none;
+    border-bottom: 5px solid rgba(0, 0, 0, 0);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+li:hover{
+    border-bottom:5px solid rgb(14, 148, 193);
+    background-color: rgba(255, 255, 255, 0.04);
+}

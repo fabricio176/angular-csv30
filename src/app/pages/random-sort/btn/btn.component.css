@@ -1,0 +1,11 @@
+button{
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 1rem;
+
+    color: wheat;
+    background-color: #2b84d8;
+
+    font-size: 15px;
+    font-family: Valorant;
+}
