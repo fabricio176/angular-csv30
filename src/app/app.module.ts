@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RandomSortComponent } from './pages/random-sort/random-sort.component';
 import { BtnComponent } from './pages/random-sort/btn/btn.component';
+import { SortedPlayersComponent } from './pages/random-sort/sorted-players/sorted-players.component';
+import { PlayersAddedComponent } from './pages/random-sort/players-added/players-added.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +16,13 @@ import { BtnComponent } from './pages/random-sort/btn/btn.component';
     NavbarComponent,
     RandomSortComponent,
     BtnComponent,
+    SortedPlayersComponent,
+    PlayersAddedComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

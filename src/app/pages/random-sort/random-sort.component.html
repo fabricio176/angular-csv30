@@ -2,12 +2,48 @@
     <h1>SORTEIO DE JOGADORES</h1>
 
     <div class="randomSort__container">
-        <h1>ADICIONE OS JOGADORES</h1>
+        <div class="randomSort__container__left">
+            <h1>ADICIONE OS JOGADORES</h1>
 
-        <input type="text">
-        <div class="randomSort__container__btn">
-            <app-btn btnLabel="ADICIONAR"></app-btn>
-            <app-btn btnLabel="SORTEAR"></app-btn>
+            <div class="randomSort__container__content">
+                <input [(ngModel)]="namePlayer" id="namePlayer" type="text" placeholder="Digite o nome do jogador">
+                <div class="mt-2">
+
+                    <div class="container__elo">
+                        <h5>ELO:</h5>
+                        <select [(ngModel)]="eloSelected" name="" id="selectElo">
+                            <option *ngFor="let elo of elos" [value]="elo">{{ elo }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="randomSort__container__button">
+                <app-btn [eloSelected]="eloSelected" [namePlayer]="namePlayer" btnLabel="ADICIONAR JOGADOR"></app-btn>
+            </div>
+        </div>
+       
+
+        <div class="randomSort__container__right">
+
+            <h1 style="text-align: center;">EQUIPES</h1>
+
+            <div class="mt-2">
+                <h5>Quantidade de Equipes: <input id="qttTeam" type="number"></h5>
+            </div>
+            <div class="mt-2">
+                <h5>Tipo de Sorteio:
+                    <select name="typeSort" id="">
+                        <option value="normal">Padrao</option>
+                        <option value="normal">Por elo</option>
+                    </select>
+                </h5>
+            </div>
+            <div class="randomSort__container__button">
+                <app-btn btnLabel="SORTEAR"></app-btn>
+            </div>
         </div>
     </div>
+
+    <app-players-added></app-players-added>
+
 </div>

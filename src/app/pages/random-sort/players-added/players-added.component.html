@@ -1,0 +1,15 @@
+<div class="randomSort__playersAdded">
+    <br><br>
+    <h3 style="text-align: center; margin-bottom: 20px;">JOGADORES ADICIONADOS</h3>
+    <div class="randomSort__playersAdded__content">
+        <div class="namePlayer">
+            <div class="playerList">
+                <ol>
+                    <li *ngFor="let player of players; index as i">
+                        {{ player.name }} - {{ player.elo }}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
