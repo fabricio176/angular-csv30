@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-sorted-players',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sorted-players.component.css']
 })
 export class SortedPlayersComponent implements OnInit {
-
-  constructor() { }
+  teams:any[] = [];
+  
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit(): void {
+    this.playerService.raffleResult$.subscribe(result =>{
+      this.teams = result;
+    })
   }
 
 }

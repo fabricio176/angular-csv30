@@ -28,22 +28,22 @@
             <h1 style="text-align: center;">EQUIPES</h1>
 
             <div class="mt-2">
-                <h5>Quantidade de Equipes: <input id="qttTeam" type="number"></h5>
+                <h5>Quantidade de Equipes: <input [(ngModel)]="numTeams" id="numTeams" type="number" min="0"></h5>
             </div>
             <div class="mt-2">
                 <h5>Tipo de Sorteio:
-                    <select name="typeSort" id="">
-                        <option value="normal">Padrao</option>
-                        <option value="normal">Por elo</option>
+                    <select [(ngModel)]="typeSort"  id="">
+                        <option *ngFor="let option of myOptions" [value]="option">{{ option }}</option>
                     </select>
                 </h5>
             </div>
             <div class="randomSort__container__button">
-                <app-btn btnLabel="SORTEAR"></app-btn>
+                <app-btn-sort [numTeams]="numTeams" typeSort="typeSort" btnLabel="SORTEAR"></app-btn-sort>
             </div>
         </div>
     </div>
 
-    <app-players-added></app-players-added>
+    <app-players-added *ngIf="!raffleRealized"></app-players-added>
+    <app-sorted-players *ngIf="raffleRealized"></app-sorted-players>
 
 </div>

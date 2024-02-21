@@ -1,11 +1,9 @@
 <div class="randomSort__listSortedPlayers">
-    <div class="randomSort__listSortedPlayers__team">
-        <h3 style="text-align: center;">Equipe</h3>
-        <br>
-        <p>JOGADOR 1:</p>
-        <p>JOGADOR 2:</p>
-        <p>JOGADOR 3:</p>
-        <p>JOGADOR 4:</p>
-        <p>JOGADOR 5:</p>
+    <h3 style="text-align: center; margin-bottom: 20px;">TIMES SORTEADOS</h3>
+    <div *ngFor="let team of teams" class="randomSort__listSortedPlayers__team">
+        <h4>Equipe {{ team.number }}</h4>
+        <div *ngFor="let player of team.players">
+            <p>{{ player.name }}</p>
+        </div>
     </div>
 </div>

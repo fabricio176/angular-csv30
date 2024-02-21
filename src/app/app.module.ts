@@ -9,6 +9,7 @@ import { BtnComponent } from './pages/random-sort/btn/btn.component';
 import { SortedPlayersComponent } from './pages/random-sort/sorted-players/sorted-players.component';
 import { PlayersAddedComponent } from './pages/random-sort/players-added/players-added.component';
 import { FormsModule } from '@angular/forms';
+import { BtnSortComponent } from './pages/random-sort/btn-sort/btn-sort.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     BtnComponent,
     SortedPlayersComponent,
     PlayersAddedComponent,
+    BtnSortComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-random-sort',
@@ -6,15 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./random-sort.component.css']
 })
 export class RandomSortComponent implements OnInit {
-  elos:string[] = ['Sem Elo', 'Ferro', 'Bronze', 'Prata', 'Ouro', 'Platina', 'Esmeralda', 'Mestre', 'Grão-Mestre', 'Desafiante']
+
+  myOptions:string[] = ['Padrao', 'Por elo'];
+  numTeams:number = 0;
+  typeSort:string = "";
+
   namePlayer:string = "";
+
   eloSelected:string = "";
+  elos:string[] = ['Sem Elo', 'Ferro', 'Bronze', 'Prata', 'Ouro', 'Platina', 'Esmeralda', 'Mestre', 'Grão-Mestre', 'Desafiante'];
 
+  raffleRealized = false;
 
-  constructor() { }
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit(): void {
-    console.log(this.eloSelected);
+    this.playerService.raffleResult$.subscribe( result =>{
+      this.raffleRealized = true;
+    })
   }
 
   
